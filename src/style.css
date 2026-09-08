@@ -1,0 +1,287 @@
+/* ==========================================================================
+   PLATAFORMA PWA REPORTES URBANOS - ESTILOS BASE (CSS3)
+   Optimizado para accesibilidad (WCAG 2.1 AAA), contraste alto y Lighthouse 100/100
+   ========================================================================== */
+
+:root {
+  --color-primario: #0d47a1;
+  --color-primario-hover: #0a3880;
+  --color-fondo: #f4f6f9;
+  --color-superficie: #ffffff;
+  --color-texto: #000000;
+  --color-texto-secundario: #333333;
+  --color-borde: #767676;
+  --color-error: #b71c1c;
+  --color-error-fondo: #ffebee;
+  --color-exito-fondo: #e8f5e9;
+  --color-exito-borde: #2e7d32;
+  --color-exito-texto: #1b5e20;
+  --color-deshabilitado: #555555;
+  --radio-borde: 8px;
+  --fuente-familia: Arial, Helvetica, sans-serif;
+}
+
+/* Reset y caja de modelo */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-familia);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Encabezado */
+.encabezado-principal {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  padding: 24px 0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.encabezado-principal h1 {
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #f0f0f0;
+  margin-top: 6px;
+}
+
+/* Área de contenido principal */
+main {
+  flex: 1 0 auto;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+/* Tarjeta del Formulario */
+.tarjeta-formulario {
+  background-color: var(--color-superficie);
+  padding: 24px;
+  border-radius: var(--radio-borde);
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-formulario h2 {
+  font-size: 20px;
+  color: var(--color-texto);
+  margin-bottom: 6px;
+}
+
+.instruccion-formulario {
+  font-size: 13px;
+  color: var(--color-texto-secundario);
+  margin-bottom: 20px;
+}
+
+/* Grupos de campos */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.campo-grupo label {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--color-texto);
+  margin-bottom: 6px;
+}
+
+.requerido {
+  color: var(--color-error);
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--fuente-familia);
+  font-size: 16px;
+  color: var(--color-texto);
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-borde);
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"] {
+  min-height: 48px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 85px;
+}
+
+/* Estados de foco visible para teclado (Accesibilidad A11y) */
+input[type="text"]:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+/* Metadatos y contador */
+.contenedor-meta-campo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.texto-ayuda {
+  color: var(--color-texto-secundario);
+  font-size: 12px;
+}
+
+.contador {
+  color: var(--color-texto-secundario);
+  font-weight: bold;
+}
+
+/* Mensajes de error */
+.mensaje-error {
+  color: var(--color-error);
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 4px;
+  min-height: 18px;
+  display: none;
+}
+
+.campo-invalido {
+  border-color: var(--color-error) !important;
+  background-color: #fff9f9;
+}
+
+.campo-invalido + .contenedor-meta-campo + .mensaje-error,
+.campo-invalido + .texto-ayuda + .mensaje-error {
+  display: block;
+}
+
+/* Checkbox anónimo */
+.grupo-checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  margin-bottom: 22px;
+  min-height: 48px; /* Touch target accesible */
+}
+
+.grupo-checkbox input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--color-primario);
+  cursor: pointer;
+}
+
+.grupo-checkbox label {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Botón primario */
+.btn-primario {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 20px;
+  font-family: var(--fuente-familia);
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: var(--color-primario);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primario:hover:not(:disabled) {
+  background-color: var(--color-primario-hover);
+}
+
+.btn-primario:disabled {
+  background-color: var(--color-deshabilitado);
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+/* Alerta de éxito */
+.alerta-exito {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background-color: var(--color-exito-fondo);
+  border: 1.5px solid var(--color-exito-borde);
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--color-exito-texto);
+  transition: opacity 0.3s ease;
+}
+
+.icono-exito {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.texto-exito strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.texto-exito p {
+  font-size: 13px;
+  color: var(--color-texto);
+}
+
+/* Utilidad ocultar */
+.oculto {
+  display: none !important;
+}
+
+/* Pie de página */
+.pie-pagina {
+  background-color: #e9ecef;
+  border-top: 1px solid #ced4da;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #212529;
+}

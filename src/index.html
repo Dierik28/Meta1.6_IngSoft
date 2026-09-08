@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma ciudadana PWA para el reporte rápido y anónimo de incidencias urbanas en la comunidad. Funciona sin conexión con almacenamiento seguro.">
+  <meta name="theme-color" content="#0d47a1">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="./index.html">
+  
+  <title>Reportes Urbanos - Plataforma Ciudadana</title>
+  
+  <!-- Web App Manifest y PWA Icons -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  
+  <!-- Hoja de Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="encabezado-principal">
+    <div class="contenedor">
+      <h1>Reportes Urbanos</h1>
+      <p class="subtitulo">Participación ciudadana para el mejoramiento comunitario</p>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenedor" role="main">
+    <section class="tarjeta-formulario" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Nuevo Reporte Ciudadano</h2>
+      <p class="instruccion-formulario">Completa los campos obligatorios (*) para registrar una incidencia urbana en tu comunidad.</p>
+
+      <form id="form-reporte" novalidate>
+        <!-- Campo Descripción -->
+        <div class="campo-grupo">
+          <label for="desc-reporte">Descripción del problema <span class="requerido" aria-hidden="true">*</span></label>
+          <textarea 
+            id="desc-reporte" 
+            name="descripcion" 
+            placeholder="Ejemplo: Bache de gran profundidad sobre el carril derecho..." 
+            rows="3" 
+            maxlength="300"
+            required 
+            aria-required="true" 
+            aria-describedby="desc-ayuda desc-error"></textarea>
+          <div class="contenedor-meta-campo">
+            <span id="desc-ayuda" class="texto-ayuda">Describe el problema con claridad (máx. 300 caracteres).</span>
+            <span id="contador-caracteres" class="contador" aria-live="polite">0 / 300</span>
+          </div>
+          <span id="desc-error" class="mensaje-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Campo Ubicación -->
+        <div class="campo-grupo">
+          <label for="ubicacion">Ubicación o referencia <span class="requerido" aria-hidden="true">*</span></label>
+          <input 
+            type="text" 
+            id="ubicacion" 
+            name="ubicacion" 
+            placeholder="Ejemplo: Av. Reforma y Calle 4, Colonia Nueva" 
+            required 
+            aria-required="true" 
+            aria-describedby="ubi-ayuda ubi-error">
+          <span id="ubi-ayuda" class="texto-ayuda">Indica calle, cruce vehicular o punto de referencia visible.</span>
+          <span id="ubi-error" class="mensaje-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Opción de Anonimato -->
+        <div class="campo-grupo grupo-checkbox">
+          <input type="checkbox" id="anonimo" name="anonimo" checked>
+          <label for="anonimo">Enviar reporte de forma anónima (protege tu identidad personal)</label>
+        </div>
+
+        <!-- Botón de Envío -->
+        <button type="submit" id="btn-enviar" class="btn-primario" aria-label="Enviar reporte de incidencia urbana">
+          Registrar Reporte Anónimo
+        </button>
+      </form>
+
+      <!-- Mensaje de Retroalimentación de Éxito -->
+      <div id="mensaje-exito" class="alerta-exito oculto" role="status" aria-live="polite">
+        <span class="icono-exito" aria-hidden="true">✓</span>
+        <div class="texto-exito">
+          <strong>¡Reporte empaquetado con éxito!</strong>
+          <p>Tu reporte ha sido validado correctamente y preparado para su procesamiento local.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="contenedor">
+      <p>&copy; 2026 Plataforma PWA Reportes Urbanos. Desarrollado con HTML5, CSS3 y JS Vanilla.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
