@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual de Usuario - PWA Reportes Urbanos</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 2.5cm;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12pt;
+      line-height: 1.35;
+      color: #000000;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 30px;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .encabezado-academico {
+      border-bottom: 2px solid #000000;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      font-size: 10.5pt;
+      line-height: 1.3;
+    }
+    .encabezado-academico strong {
+      font-size: 11.5pt;
+    }
+    h1 {
+      font-size: 17pt;
+      font-weight: bold;
+      color: #000000;
+      text-align: center;
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #000000;
+      border-bottom: 1px solid #333333;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 12.5pt;
+      font-weight: bold;
+      color: #000000;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 12px;
+      padding-left: 28px;
+    }
+    li {
+      margin-bottom: 5px;
+      text-align: justify;
+    }
+    .caja-imagen {
+      background-color: #eaeaea;
+      border: 1px solid #888888;
+      border-radius: 4px;
+      padding: 16px 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0;
+      font-size: 11.5pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10.5pt;
+    }
+    th, td {
+      border: 1px solid #888888;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      color: #000000;
+    }
+    th {
+      background-color: #dcdcdc;
+      font-weight: bold;
+      text-align: center;
+    }
+    tr:nth-child(even) td {
+      background-color: #f7f7f7;
+    }
+    pre, code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9.5pt;
+      color: #000000;
+    }
+    pre {
+      background-color: #f5f5f5;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #333333;
+      padding: 10px 14px;
+      overflow-x: auto;
+      margin: 12px 0;
+      white-space: pre-wrap;
+    }
+    .print-button {
+      display: block;
+      margin-bottom: 20px;
+      padding: 10px 18px;
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 11pt;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    @media print {
+      .print-button { display: none; }
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button" onclick="window.print()">Guardar como PDF / Imprimir Documento</button>
+  <div class="encabezado-academico">
+    <strong>UNIVERSIDAD AUTÓNOMA DE BAJA CALIFORNIA</strong><br>
+    FACULTAD DE INGENIERÍA — CAMPUS MEXICALI | CARRERA: INGENIERÍA DE SOFTWARE<br>
+    UNIDAD DE APRENDIZAJE: INGENIERÍA DE SOFTWARE | META 1.6<br>
+    ALUMNO: Diego Erik Alfonso Montoya | MATRÍCULA: 1198520 | DOCENTE: M.C. Jose Martín Olguín Espinoza<br>
+    FECHA: Septiembre de 2026 | MEXICALI, BAJA CALIFORNIA
+  </div>
+
+  <h1>MANUAL DE USUARIO<br>PLATAFORMA PWA DE REPORTES URBANOS<br>GUÍA OPERATIVA PARA EL CIUDADANO</h1>
+
+  <h2>1. Introducción y Bienvenida a la Plataforma</h2>
+  <p>Bienvenido a la Plataforma Ciudadana de Reportes Urbanos. Esta herramienta digital ha sido creada con el objetivo primordial de empoderar a los habitantes de nuestra localidad, permitiéndoles levantar reportes rápidos, confiables y seguros sobre fallas en los servicios públicos e infraestructura de su comunidad (tales como baches en pavimento, fugas de agua potable, fallas en el alumbrado público o acumulación indebida de basura).</p>
+  
+  <h3>1.1. ¿Qué es una PWA y cuáles son sus ventajas?</h3>
+  <p>Nuestra plataforma está construida bajo los principios de una Progressive Web App (Aplicación Web Progresiva). Esto significa que combina la sencillez de una página web con la potencia visual y fluidez de una aplicación móvil instalada, ofreciéndote múltiples beneficios directos:</p>
+  <ul>
+    <li><strong>Cero fricción:</strong> No necesitas ingresar a Google Play Store ni a Apple App Store, ni lidiar con actualizaciones pesadas.</li>
+    <li><strong>Ultraligera:</strong> Ocupa menos de 1 Megabyte en la memoria de tu dispositivo y consume una cantidad mínima de datos móviles.</li>
+    <li><strong>Privacidad total:</strong> Puedes reportar incidencias de forma 100% anónima sin entregar números de teléfono ni datos personales.</li>
+    <li><strong>Alta resiliencia:</strong> Gracias a su arquitectura inteligente, la aplicación carga de inmediato aun cuando transites por zonas con baja cobertura celular.</li>
+  </ul>
+
+  <h2>2. Guía Paso a Paso de Instalación de la PWA</h2>
+  <p>Para disfrutar de una experiencia a pantalla completa como si fuera una aplicación nativa, puedes instalarla en tu dispositivo en pocos segundos siguiendo las instrucciones correspondientes a tu sistema:</p>
+
+  <h3>2.1. Instalación en Teléfonos Android (Google Chrome / Edge)</h3>
+  <ul>
+    <li><strong>Paso 1:</strong> Abre la aplicación de Google Chrome en tu teléfono celular e ingresa al enlace oficial de la plataforma de Reportes Urbanos.</li>
+    <li><strong>Paso 2:</strong> En la parte inferior de la pantalla aparecerá automáticamente una pequeña ventana flotante que dice: 'Agregar Reportes Urbanos a la pantalla principal'. Si no la ves, toca el botón de menú con tres puntos verticales (⋮) en la esquina superior derecha del navegador.</li>
+    <li><strong>Paso 3:</strong> Selecciona la opción 'Instalar aplicación' (o 'Agregar a la pantalla principal'). En la ventana de confirmación, presiona el botón 'Instalar'.</li>
+    <li><strong>Paso 4:</strong> En unos segundos, el icono oficial de Reportes Urbanos se añadirá a tu pantalla de inicio y a tu lista de aplicaciones. Al tocarlo, se abrirá en modo ventana completa sin barras de navegador.</li>
+  </ul>
+
+  <div class="caja-imagen">Espacio para imagen: [Captura del banner o menú de instalación de la PWA en dispositivo móvil]</div>
+
+  <h3>2.2. Instalación en Dispositivos Apple iOS (iPhone / iPad en Safari)</h3>
+  <ul>
+    <li><strong>Paso 1:</strong> Abre el navegador nativo Safari en tu iPhone e ingresa a la dirección web de la plataforma.</li>
+    <li><strong>Paso 2:</strong> Toca el botón 'Compartir' ubicado en el centro del menú inferior (representado por el ícono de un recuadro con una flecha vertical hacia arriba).</li>
+    <li><strong>Paso 3:</strong> Desplaza hacia abajo el menú de opciones que aparece y selecciona la opción 'Agregar al inicio' (o 'Add to Home Screen').</li>
+    <li><strong>Paso 4:</strong> Confirma el nombre de la aplicación 'Reportes Urbanos' y toca la opción 'Agregar' en la esquina superior derecha de la pantalla. El icono quedará listo en tu pantalla principal.</li>
+  </ul>
+
+  <h3>2.3. Instalación en Computadoras de Escritorio o Laptops (Chrome / Edge)</h3>
+  <ul>
+    <li><strong>Paso 1:</strong> Abre Google Chrome o Microsoft Edge en tu computadora y navega hacia la plataforma.</li>
+    <li><strong>Paso 2:</strong> En el extremo derecho de la barra de direcciones URL (donde escribes las páginas web), notarás un pequeño icono con forma de monitor con una flecha hacia abajo ('Instalar Reportes Urbanos'). Haz clic en él.</li>
+    <li><strong>Paso 3:</strong> Haz clic en 'Instalar' en la ventana emergente. La aplicación se ejecutará de inmediato en una ventana independiente, limpia y sin distracciones.</li>
+  </ul>
+
+  <div class="caja-imagen">Espacio para imagen: [Captura del icono de la PWA instalado en la pantalla de inicio del celular]</div>
+
+  <h2>3. Guía Paso a Paso para Enviar un Reporte Ciudadano</h2>
+  <p>Una vez que tengas la aplicación abierta, el proceso para capturar una incidencia urbana toma menos de 45 segundos:</p>
+
+  <div class="caja-imagen">Espacio para imagen: [Captura de la pantalla principal de la aplicación con el formulario listo]</div>
+
+  <ul>
+    <li><strong>Paso 1:</strong> Ingresa al formulario: Al abrir la aplicación, te encontrarás directamente en la pantalla 'Nuevo Reporte Ciudadano'.</li>
+    <li><strong>Paso 2:</strong> Describe el problema: En el cuadro 'Descripción del problema', redacta brevemente qué está sucediendo. Por ejemplo: 'Bache profundo sobre el carril derecho frente a la escuela primaria'. Puedes consultar el contador de caracteres ubicado en la esquina inferior derecha (máximo 300 caracteres).</li>
+    <li><strong>Paso 3:</strong> Indica la ubicación: En el campo 'Ubicación o referencia', escribe la dirección lo más clara posible indicando calles, cruces o lugares conocidos (por ejemplo: 'Av. Reforma y Calle 4, Colonia Nueva').</li>
+    <li><strong>Paso 4:</strong> Verifica el modo anónimo: La casilla 'Enviar reporte de forma anónima' viene seleccionada de manera predeterminada. Manténla marcada para asegurarte de que ningún dato de tu dispositivo sea compartido.</li>
+    <li><strong>Paso 5:</strong> Pulsa el botón de envío: Haz clic o toca una sola vez sobre el botón azul 'Registrar Reporte Anónimo'.</li>
+    <li><strong>Paso 6:</strong> Confirmación instantánea: Notarás que el botón cambia temporalmente su texto a 'Enviando reporte...' y se despliega un recuadro verde de confirmación con el mensaje: '¡Reporte empaquetado con éxito! Tu reporte ha sido validado correctamente y preparado para su procesamiento local.'</li>
+  </ul>
+
+  <div class="caja-imagen">Espacio para imagen: [Captura del mensaje de confirmación de éxito y botón temporalmente bloqueado]</div>
+
+  <h2>4. Mecanismos de Prevención de Errores y Seguridad</h2>
+  <p>La plataforma integra mecanismos de software preventivo diseñados para guiarte de forma amigable y evitar equivocaciones comunes al momento de reportar:</p>
+
+  <h3>4.1. Prevención de envíos vacíos o con puros espacios</h3>
+  <p>¿Qué sucede si por error tocas el botón de enviar sin haber escrito nada, o si únicamente presionaste la barra espaciadora varias veces? El sistema cuenta con una función de sanitización inteligente (.trim()) que detecta que los campos carecen de texto real. Si esto ocurre:</p>
+  <ul>
+    <li>El formulario NO se enviará y no se perderá tu tiempo.</li>
+    <li>El campo incompleto se resaltará automáticamente con un borde rojo llamativo.</li>
+    <li>Aparecerá un mensaje explicativo debajo del campo: 'La descripción es obligatoria y no puede contener solo espacios'.</li>
+    <li>El cursor se colocará automáticamente sobre el campo con error para que puedas corregirlo sin dar clics extras.</li>
+  </ul>
+
+  <div class="caja-imagen">Espacio para imagen: [Captura del formulario con el error de validación cuando se ingresan puros espacios]</div>
+
+  <h3>4.2. Prevención de envíos duplicados (Doble clic accidental)</h3>
+  <p>En teléfonos móviles es sumamente común pulsar varias veces el botón por impaciencia o reflejo muscular involuntario. Para proteger al sistema y a tu reporte, la aplicación desactiva automáticamente el botón durante 3 segundos tras la primera pulsación válida. Esto te asegura que tu reporte solo se procesará una sola vez, evitando crear múltiples incidencias idénticas.</p>
+
+  <h3>4.3. Resiliencia ante fallas de conexión (Modo Sin Conexión)</h3>
+  <p>Si estás caminando por una calle con mala señal de telefonía o entras en una zona sin internet, la aplicación no se detendrá ni mostrará la pantalla en blanco con el 'dinosaurio' de Chrome. El Service Worker mantiene la interfaz cargada en tu teléfono y los datos se resguardan en la memoria local para ser procesados con seguridad.</p>
+
+  <h2>5. Consejos para un Reporte Ciudadano Eficaz</h2>
+  <ul>
+    <li><strong>Claridad:</strong> Sé conciso pero específico: Señala dimensiones aproximadas del daño (ej. 'Bache de medio metro de ancho') para que la cuadrilla asista con el material adecuado.</li>
+    <li><strong>Georreferencia:</strong> Si la calle carece de nomenclatura visible, menciona esquinas comerciales, postes con numeración o monumentos cercanos.</li>
+    <li><strong>Civismo:</strong> Recuerda que los reportes son analizados por el equipo revisor municipal y la colaboración respetuosa acelera los tiempos de solución comunitaria.</li>
+  </ul>
+</body>
+</html>

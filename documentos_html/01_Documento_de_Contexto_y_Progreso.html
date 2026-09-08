@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Documento de Contexto y Progreso - PWA Reportes Urbanos</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 2.5cm;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12pt;
+      line-height: 1.35;
+      color: #000000;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 30px;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .encabezado-academico {
+      border-bottom: 2px solid #000000;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      font-size: 10.5pt;
+      line-height: 1.3;
+    }
+    .encabezado-academico strong {
+      font-size: 11.5pt;
+    }
+    h1 {
+      font-size: 17pt;
+      font-weight: bold;
+      color: #000000;
+      text-align: center;
+      margin-top: 18px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #000000;
+      border-bottom: 1px solid #333333;
+      padding-bottom: 4px;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 12.5pt;
+      font-weight: bold;
+      color: #000000;
+      margin-top: 16px;
+      margin-bottom: 6px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 12px;
+      padding-left: 28px;
+    }
+    li {
+      margin-bottom: 5px;
+      text-align: justify;
+    }
+    .caja-imagen {
+      background-color: #eaeaea;
+      border: 1px solid #888888;
+      border-radius: 4px;
+      padding: 16px 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0;
+      font-size: 11.5pt;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10.5pt;
+    }
+    th, td {
+      border: 1px solid #888888;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      color: #000000;
+    }
+    th {
+      background-color: #dcdcdc;
+      font-weight: bold;
+      text-align: center;
+    }
+    tr:nth-child(even) td {
+      background-color: #f7f7f7;
+    }
+    pre, code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9.5pt;
+      color: #000000;
+    }
+    pre {
+      background-color: #f5f5f5;
+      border: 1px solid #cccccc;
+      border-left: 4px solid #333333;
+      padding: 10px 14px;
+      overflow-x: auto;
+      margin: 12px 0;
+      white-space: pre-wrap;
+    }
+    .print-button {
+      display: block;
+      margin-bottom: 20px;
+      padding: 10px 18px;
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 11pt;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    @media print {
+      .print-button { display: none; }
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button" onclick="window.print()">Guardar como PDF / Imprimir Documento</button>
+  <div class="encabezado-academico">
+    <strong>UNIVERSIDAD AUTÓNOMA DE BAJA CALIFORNIA</strong><br>
+    FACULTAD DE INGENIERÍA — CAMPUS MEXICALI | CARRERA: INGENIERÍA DE SOFTWARE<br>
+    UNIDAD DE APRENDIZAJE: INGENIERÍA DE SOFTWARE | META 1.6<br>
+    ALUMNO: Diego Erik Alfonso Montoya | MATRÍCULA: 1198520 | DOCENTE: M.C. Jose Martín Olguín Espinoza<br>
+    FECHA: Septiembre de 2026 | MEXICALI, BAJA CALIFORNIA
+  </div>
+
+  <h1>DOCUMENTO DE CONTEXTO Y PROGRESO<br>PLATAFORMA PWA DE REPORTES URBANOS</h1>
+
+  <h2>1. Resumen Ejecutivo y Marco General</h2>
+  <p>El presente documento consolida la arquitectura, requerimientos del sistema, historias de usuario, desglose técnico de ingeniería y la justificación metodológica que sustentan la construcción del primer incremento del Producto Mínimo Viable (MVP) para la plataforma comunitaria de Reportes Urbanos. La iniciativa responde a la necesidad crítica de dotar a la ciudadanía de una herramienta ágil, accesible y resiliente que permita levantar incidencias en la vía pública (baches, fallas de alumbrado, fugas de agua y acumulación de residuos) sin la fricción de instalar aplicaciones nativas pesadas y asegurando la máxima confidencialidad de los datos personales.</p>
+  <p>A lo largo de las fases previas del proyecto (Metas 1.3 a 1.5), se definió la arquitectura de software monolítica desacoplada del lado del cliente, se redactaron las historias de usuario bajo el marco Jobs To Be Done (JTBD) con criterios de aceptación en sintaxis Gherkin, y se llevó a cabo una descomposición analítica en árbol que derivó en la selección de la primera historia técnica mediante una sesión colaborativa de Planning Poker.</p>
+
+  <h2>2. Roles de Usuario Identificados en el Ecosistema</h2>
+  <p>Para garantizar que la solución resuelva problemas reales de interacción humana y procesos administrativos, el sistema delimita tres roles fundamentales con responsabilidades operativas bien diferenciadas:</p>
+  
+  <h3>2.1. Usuario Ciudadano (Autor / Reportante)</h3>
+  <ul>
+    <li><strong>Rol y contexto operativo:</strong> Habitante de la localidad que transita por la vía pública e interactúa con el sistema principalmente a través de dispositivos móviles de gama baja o media en condiciones ambientales diversas (luz solar directa, conectividad intermitente o nula).</li>
+    <li><strong>Objetivo clave:</strong> Requiere un mecanismo de captura de alta velocidad para registrar una fotografía, su geolocalización aproximada o exacta y una descripción sintética del problema en menos de 60 segundos.</li>
+    <li><strong>Restricción y privacidad:</strong> Exige una opción estricta de anonimato para proteger su identidad personal y salvaguardar su integridad cívica. Asimismo, el sistema debe garantizar que si el usuario pierde la conexión celular a internet, el reporte no se pierda en el navegador.</li>
+  </ul>
+
+  <h3>2.2. Usuario Revisor (Filtro de Calidad y Validación)</h3>
+  <ul>
+    <li><strong>Rol y contexto operativo:</strong> Servidor público o coordinador vecinal encargado de la inspección preliminar de los reportes entrantes desde una interfaz de escritorio o tableta.</li>
+    <li><strong>Objetivo clave:</strong> Evalúa exhaustivamente la evidencia capturada para certificar que la descripción sea legible y congruente, que la fotografía sea nítida y pertinente, y que la ubicación corresponda a un área de jurisdicción válida.</li>
+    <li><strong>Impacto técnico:</strong> Este rol depende directamente de la calidad con la que los datos fueron capturados en el frontend. Si el sistema permite el envío de datos corruptos, cadenas vacías o información basura, la carga de trabajo del revisor colapsa de forma improductiva.</li>
+  </ul>
+
+  <h3>2.3. Usuario Editor (Gestor de Estados y Canalización)</h3>
+  <ul>
+    <li><strong>Rol y contexto operativo:</strong> Personal técnico de dependencias municipales u operativas que coordina la atención efectiva de los reportes en campo.</li>
+    <li><strong>Objetivo clave:</strong> Organiza los reportes por categorías de urgencia y zona geográfica, actualiza el estatus operativo del ciclo de vida (Registrado, En Revisión, Canalizado, En Cuadrilla, Solucionado) y retroalimenta al ciudadano mediante el número de folio asignado.</li>
+    <li><strong>Garantía de integridad:</strong> Evita la duplicación de órdenes de trabajo y el extravío de reportes críticos mediante auditorías de folios estructurados.</li>
+  </ul>
+
+  <h2>3. Alcance del Producto Mínimo Viable (MVP)</h2>
+  <p>El alcance funcional del MVP se estructuró a partir de cuatro pilares orientados a resolver el flujo completo de vida de un reporte urbano, priorizando la máxima sencillez arquitectónica y la ausencia de dependencias externas pesadas:</p>
+  <ul>
+    <li><strong>1. Módulo de Captura Ciudadana:</strong> Formulario ágil enfocado en capturar descripción, fotografía de evidencia, ubicación geográfica y conmutador de reporte anónimo.</li>
+    <li><strong>2. Módulo de Seguimiento y Folios:</strong> Generación determinista de folios alfanuméricos únicos y módulo de consulta pública para conocer el avance de la resolución sin requerir inicio de sesión.</li>
+    <li><strong>3. Módulo de Gamificación Cívica:</strong> Sistema ligero de asignación de puntos e insignias honoríficas comunitarias almacenadas localmente para motivar la participación ciudadana continuada.</li>
+    <li><strong>4. Capacidades PWA y Persistencia Offline:</strong> Manifiesto de aplicación web instalable (PWA), Service Worker con estrategia de caché y persistencia contingente de reportes mediante LocalStorage ante cortes de conectividad.</li>
+  </ul>
+
+  <h2>4. Historias de Usuario (JTBD y Sintaxis Gherkin)</h2>
+  <h3>HU-001: Captura Ágil y Anónima de Reporte Urbano</h3>
+  <p><strong>Historia (JTBD):</strong> Como usuario ciudadano que transita por la ciudad, quiero registrar una fotografía, ubicación y descripción breve de un problema urbano en un formulario sencillo, para dejar evidencia fehaciente ante las autoridades locales sin tener que exponer datos personales innecesarios.</p>
+  <pre>ESCENARIO: Envío exitoso de un reporte con modo anónimo activado
+DADO QUE el ciudadano se encuentra en la pantalla principal del formulario
+Y ha ingresado una descripción válida y una referencia de ubicación
+CUANDO mantiene seleccionada la casilla 'Enviar reporte de forma anónima' y pulsa el botón 'Registrar Reporte'
+ENTONCES el sistema valida asíncronamente que los campos contengan texto no vacío
+Y bloquea el botón de envío temporalmente durante 3 segundos para evitar clics duplicados
+Y empaqueta la información en memoria sin solicitar ni adjuntar datos personales de identificación
+Y muestra un mensaje visual de éxito al usuario.</pre>
+
+  <h3>HU-002: Conservación de Reporte ante Pérdida de Conectividad</h3>
+  <p><strong>Historia (JTBD):</strong> Como usuario ciudadano en campo con mala señal celular, quiero que mi reporte se almacene localmente en mi dispositivo si se corta la conexión a internet, para no perder la información redactada ni el tiempo invertido en capturarla.</p>
+  <pre>ESCENARIO: Almacenamiento contingente en ausencia de red
+DADO QUE el usuario ha completado los campos mínimos del formulario
+Y el dispositivo móvil ha perdido la conexión de datos móviles o Wi-Fi
+CUANDO el usuario presiona el botón para registrar el reporte
+ENTONCES el sistema detecta la ausencia de conectividad
+Y almacena el objeto estructurado en el LocalStorage bajo la colección 'pwa_reportes'
+Y notifica en pantalla que el reporte fue resguardado localmente y se transmitirá al recuperar señal.</pre>
+
+  <h3>HU-003: Asignación de Folio Único para Auditoría y Seguimiento</h3>
+  <p><strong>Historia (JTBD):</strong> Como usuario ciudadano responsable, quiero recibir un folio único alfanumérico al empaquetar mi reporte, para dar seguimiento posterior al estatus de resolución de mi incidencia comunitaria.</p>
+  <pre>ESCENARIO: Generación determinista de identificador de seguimiento
+DADO QUE el formulario ha superado las validaciones sintácticas y lógicas
+CUANDO se genera la estructura final del reporte en formato JSON
+ENTONCES el sistema asigna una propiedad 'folio' con prefijo 'REP-' seguido de una marca temporal única
+Y deja disponible dicho identificador en la consola y en el estado de la aplicación.</pre>
+
+  <h2>5. Descomposición Técnica en Árbol</h2>
+  <p>Para traducir los requerimientos del usuario en módulos de código concretos y desacoplados, se aplicó la técnica formal de 'Descomposición en Árbol', dividiendo la arquitectura del frontend en tres capas esenciales:</p>
+  <pre>ARQUITECTURA DE DESCOMPOSICIÓN TÉCNICA DEL INCREMENTO:
+├── Componente UI (Interfaz de Usuario y A11y)
+│   ├── Maquetación semántica HTML5 (header, main, section, form, labels asociados)
+│   ├── Estilos responsivos Mobile-First con CSS3 puro
+│   ├── Accesibilidad y contraste de color validado bajo WCAG 2.1 AAA
+│   ├── Estados de foco visible (:focus-visible) para navegación con teclado
+│   └── Áreas de retroalimentación dinámicas con roles ARIA (role='status', aria-live)
+├── Componente Lógica (Lógica de Negocio en JavaScript Vanilla)
+│   ├── Prevención del evento por defecto submit (SPA nativa)
+│   ├── Validación estricta y sanitización de cadenas con .trim() para evitar datos vacíos
+│   ├── Control de debounce / prevención de doble clic deshabilitando botón 3 segundos
+│   ├── Contador dinámico de caracteres en tiempo real
+│   └── Empaquetado de la entidad Reporte en un objeto estructurado JSON
+└── Componente Persistencia y PWA (Capa de Conectividad y Almacenamiento)
+    ├── Registro y ciclo de vida del Service Worker (sw.js)
+    ├── Pre-caché de recursos críticos con estrategia Cache-First
+    ├── Manifiesto Web App (manifest.json) con iconos adaptativos maskable
+    └── Preparación de la interfaz para persistencia local contingente (LocalStorage)</pre>
+
+  <div class="caja-imagen">Espacio para imagen: [Diagrama de árbol de la descomposición técnica en UI, Lógica y Persistencia]</div>
+
+  <h2>6. Estimación Colaborativa con Planning Poker</h2>
+  <p>A partir de la descomposición técnica, se convocó al equipo de desarrollo a una sesión de Planning Poker Simplificado, empleando la serie de Fibonacci modificada para evaluar la complejidad relativa, incertidumbre técnica y esfuerzo de implementación:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Historia Técnica</th>
+        <th>Estimación</th>
+        <th>Criterios y Justificación del Esfuerzo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>HT-01</strong></td>
+        <td>Integrar Geolocation API para georreferenciación</td>
+        <td><strong>5 Puntos</strong></td>
+        <td>Complejidad alta (2 a 4 horas). Implica la gestión de permisos asíncronos en navegadores móviles, manejo de promesas de geolocalización por hardware, gestión de fallos si el usuario rechaza permisos y lógica de fallback manual.</td>
+      </tr>
+      <tr>
+        <td><strong>HT-02</strong></td>
+        <td>Implementar persistencia contingente en LocalStorage</td>
+        <td><strong>3 Puntos</strong></td>
+        <td>Complejidad moderada (1 a 2 horas). Demanda estructuración de arrays serializados en JSON, control de excepciones con try/catch para evitar bloqueos por cuota excedida (límite de 5MB) y recuperación en arranque.</td>
+      </tr>
+      <tr>
+        <td><strong>HT-03</strong></td>
+        <td>Validación asíncrona y empaquetado del formulario</td>
+        <td><strong>2 Puntos</strong></td>
+        <td>Complejidad baja/acotada (30 a 60 minutos). Enfoque directo sobre manipulación segura del DOM, sanitización de inputs con .trim(), control de estados del botón y retroalimentación de error sin dependencias.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="caja-imagen">Espacio para imagen: [Tabla de estimación con Planning Poker y asignación de puntos]</div>
+
+  <h2>7. Justificación Metodológica: 'Baby Steps' e Incrementos Verticales</h2>
+  <h3>7.1. El Principio de 'Baby Steps' (Pasos Pequeños y Seguros)</h3>
+  <p>El principio ágil de 'Baby Steps' sostiene que ante un problema multifacético, el equipo debe aislar la unidad de funcionalidad más pequeña y libre de dependencias que sea capaz de ejecutarse y probarse de forma inmediata. La Historia Técnica #3 únicamente requiere los elementos nativos del DOM (HTML5) y la máquina virtual de JavaScript del navegador. Iniciar por la Geolocation API (HT-01) hubiera introducido fricción prematura por permisos de sensores del dispositivo; mientras que arrancar con LocalStorage (HT-02) hubiera significado diseñar una capa de persistencia sobre datos que aún no estaban definidos ni filtrados.</p>
+
+  <h3>7.2. Principio GIGO (Garbage In, Garbage Out) y Calidad Preventiva</h3>
+  <p>En sistemas de recolección de información pública, el axioma 'Basura entra, basura sale' define el éxito o fracaso del proyecto. Si la capa de captura permite que un usuario envíe descripciones en blanco, cadenas compuestas exclusivamente por barras espaciadoras o envíos duplicados por clics compulsivos:</p>
+  <ul>
+    <li><strong>Impacto en datos:</strong> Se saturaría innecesariamente la memoria local del navegador con registros inservibles.</li>
+    <li><strong>Impacto en recursos:</strong> Se desperdiciarían llamadas asíncronas a los sensores de geolocalización y a la red celular.</li>
+    <li><strong>Impacto humano:</strong> Se contaminaría la cola de trabajo del Usuario Revisor, obligándolo a descartar reportes vacíos.</li>
+  </ul>
+  <p>Por lo tanto, resolver la sanitización estricta mediante el método .trim(), deshabilitar el botón durante el ciclo de empaquetado y garantizar que solo viajen objetos conformes asegura que el sistema posea una frontera defensiva inquebrantable desde su punto de entrada.</p>
+
+  <h3>7.3. Incremento Vertical Demostrable y Valor de Extremo a Extremo</h3>
+  <p>Un incremento vertical atraviesa todas las capas de la arquitectura en un grosor mínimo: Captura (UI) -> Validación y Empaquetado (Lógica) -> Estructuración en memoria (Datos). Al concluir la Historia Técnica #3, el usuario y los evaluadores cuentan con una pieza de software completamente operable que captura datos reales, los valida con rigor, ofrece respuestas visuales accesibles y deja el objeto listo para conectarse sin refactorizaciones a la persistencia y al mapa en los siguientes sprints.</p>
+</body>
+</html>
